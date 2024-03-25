@@ -1,7 +1,13 @@
 #ifndef PRINTF_H
 #define PRINTF_H
+#include <stdarg.h>
 
-int _printf(const char *, ...);
+int _putchar(char c);
+
+int _printf(const char *format, ...);
+int print_char(char *separator, va_list args);
+int print_string(char *separator, va_list args);
+int print_percent(char *separator, va_list args);
 
 /**
  * struct _format - Typedef struct
@@ -11,8 +17,8 @@ int _printf(const char *, ...);
  **/
 typedef struct _format
 {
-	char type;
-	int (*f)(va_list);
-} format;
+	char *type;
+	int (*f)(char *separator, va_list args);
+} frmt_id;
 
 #endif
