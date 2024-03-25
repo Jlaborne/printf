@@ -14,6 +14,8 @@ int print_all(const char *str, va_list list)
 	};
 	int size, i, j;
 
+	size = 0;
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == '%')
@@ -21,7 +23,7 @@ int print_all(const char *str, va_list list)
 			j = 0;
 			i++;
 
-			if (str[i] != 0 && formats[j].f != NULL)
+			if (str[i] != formats[j]._char && formats[j].f != NULL)
 			{
 				j++;
 			}
