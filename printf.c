@@ -1,5 +1,7 @@
 #include "main.h"
-
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
 /**
  * _printf - 
  * @format:
@@ -10,5 +12,5 @@
 
 int _printf(const char *format, ...);
 {
-
+    
 }
