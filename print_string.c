@@ -2,14 +2,14 @@
 
 void print_string(va_list arg)
 {
-	unsigned int i;
+	
 	char *str = va_arg(args, char *);
 
-	if (arg == NULL)
+	if (str == NULL)
 	{
 		printf("%s%s", separator, "(nil)");
 		return;
 	}
 
-	printf("%s%s", separator, arg);
+	printf("%s%s", separator, str);
 }
