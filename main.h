@@ -3,7 +3,6 @@
 
 #include <stdarg.h>
 
-
 /**
  * struct _format - Typedef struct
  *
