@@ -7,14 +7,14 @@
  * the null byte used to end output to strings)
  */
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	int size;
 
 	va_list args;
 
 	if (format == NULL)
-		return(NULL);
+		return(-1);
 
 	va_start(args, format);
 

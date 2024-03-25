@@ -11,6 +11,7 @@ int print_char(char *separator, va_list args);
 int print_string(char *separator, va_list args);
 int print_percent(char *separator, va_list args);
 
+int _strlen(char *s);
 /**
  * struct _format - Typedef struct
  *
