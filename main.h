@@ -6,12 +6,11 @@
 
 int _putchar(char c);
 
-void print_all(const char * const format, ...);
-
 int _printf(const char *format, ...);
-int print_char(char *separator, va_list args);
-int print_string(char *separator, va_list args);
-int print_percent(char *separator, va_list args);
+void print_all(const char * const format, ...);
+void print_char(char *separator, va_list args);
+void print_string(char *separator, va_list args);
+void print_percent(char *separator, va_list args);
 
 int _strlen(const char *s);
 /**
