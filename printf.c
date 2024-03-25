@@ -1,5 +1,7 @@
 #include "main.h"
-
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
 /**
  * _printf -
  * @format:
@@ -10,6 +12,7 @@
 
 int _printf(const char *format, ...);
 {
+<<<<<<< HEAD
 	int size;
 
 	va_list args;
@@ -25,4 +28,7 @@ int _printf(const char *format, ...);
 	va_end(args);
 
 	return(size);
+=======
+    
+>>>>>>> refs/remotes/origin/develop
 }

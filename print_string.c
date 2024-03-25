@@ -2,10 +2,14 @@
 
 void print_string(va_list arg)
 {
-	int i;
+	unsigned int i;
+	char *str = va_arg(args, char *);
 
-	for (i = 0; str[i] != '\0'; ++i)
-		_putchar(str[i]);
+	if (arg == NULL)
+	{
+		printf("%s%s", separator, "(nil)");
+		return;
+	}
 
-	return (i);
+	printf("%s%s", separator, arg);
 }
