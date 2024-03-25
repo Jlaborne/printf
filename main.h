@@ -3,7 +3,7 @@
 
 #include <stdarg.h>
 
-int _strlen(const char *s);
+int _strlen(const char *str)
 /**
  * struct _format - Typedef struct
  *
