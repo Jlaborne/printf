@@ -6,7 +6,7 @@
 
 int _putchar(char c);
 
-void print_all(const char * const format, ...)
+void print_all(const char * const format, ...);
 
 int _printf(const char *format, ...);
 int print_char(char *separator, va_list args);

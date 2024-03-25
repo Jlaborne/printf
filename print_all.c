@@ -1,10 +1,11 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdarg.h>
 
+/**
+ * print_all - Print values based on format string
+ * @format: The format string
+ * @...: Additional arguments depending on format string
+ */
 void print_all(const char * const format, ...)
-
 {
     va_list args;
 	f_dt form_types[] = {
