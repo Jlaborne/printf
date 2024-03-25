@@ -4,7 +4,7 @@
 #include <stdarg.h>
 
 
-int _strlen(const char *str)
+int _strlen(const char *str);
 
 /**
  * struct _format - Typedef struct
