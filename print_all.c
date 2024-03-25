@@ -5,37 +5,43 @@
  * @format: The format string
  * @...: Additional arguments depending on format string
  */
-void print_all(const char * const format, ...)
+int print_all(const char *str, va_list list)
 {
-	f_dt form_types[] = {
+	format formats[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
 		{NULL, NULL}
 	};
-	unsigned int i = 0;
-	unsigned int j = 0;
+	int size, i, j;
 
-
-
-	while (format && format[i])
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		j = 0;
-		if (format[i] == '%')
+		if (str[i] == '%')
 		{
-			while (form_types[j].f != NULL && (format[i] + 1) != *(form_types[j]._char))
+			j = 0;
+			i++;
+
+			if (str[i] != formats[j].type && formats[j].f != NULL)
 			{
 				j++;
 			}
-
-			if (form_types[j]._char != NULL)
+			if (formats[j].f != NULL)
 			{
-				form_types[j].f(format);
+				formats[j].f(list);
+			}
+			else
+			{
+				putchar('%');
+				size++;
 			}
 		}
-	i++;
-
+		else
+		{
+		_putchar(str[i]);
+		size = size + 1;
+		}
 	}
-	printf("\n");
 
+	return (size);
 }

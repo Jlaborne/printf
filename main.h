@@ -15,15 +15,15 @@ int _strlen(const char *str);
 typedef struct _format
 {
 	char *_char;
-	void (*f)(char *separator, va_list args);
-} f_dt;
+	void (*f)(va_list);
+} format;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void print_all(const char * const format, ...);
+int print_all(const char *str, va_list list);
 int _strlen(const char *s);
-void print_char(char *separator, va_list args);
-void print_string(char *separator, va_list args);
-void print_percent(char *separator, va_list args);
+int print_char(va_list);
+int print_string(va_list);
+int print_percent(va_list);
 
 #endif
