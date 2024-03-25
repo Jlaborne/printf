@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 	f_dt form_types[] = {
 		{ "c", print_char },
 		{ "s", print_string },
-        { "%%", print_percent }
+        { "%", print_percent }
 	};
     unsigned int i = 0;
 	unsigned int j = 0;

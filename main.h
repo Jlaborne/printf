@@ -14,7 +14,7 @@ typedef struct _format
 {
 	char *type;
 	int (*f)(char *separator, va_list args);
-} frmt_id;
+} f_dt;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
