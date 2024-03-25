@@ -7,35 +7,36 @@
  */
 void print_all(const char * const format, ...)
 {
-    va_list args;
 	f_dt form_types[] = {
-		{ "c", print_char },
-		{ "s", print_string },
-        { "%%", print_percent }
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{NULL, NULL}
 	};
-    unsigned int i = 0;
+	unsigned int i = 0;
 	unsigned int j = 0;
-	char *separator = " ";
 
-	va_start(args, format);
 
-	while (format != NULL && format[i])
+
+	while (format && format[i])
 	{
 		j = 0;
-		while (j < sizeof(form_types) / sizeof(form_types[0]))
+		if (format[i] == '%')
 		{
-			if (format[i] == *form_types[j].identifier)
+			while (form_types[j].type != NULL && (format[i] + 1) != *(form_types[j].type))
 			{
-				form_types[j].f(separator, args);
-				separator = ", ";
-                break;
+				j++;
 			}
-			j++;
-		}
-		i++;
-	}
 
-	va_end(args);
+			if (form_types[j]._char != NULL)
+			{
+				form_types[j].f(args);
+			}
+		}
+	i++;
+
+	}
+	
 	printf("\n");
 
 }
