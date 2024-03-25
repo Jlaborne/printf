@@ -1,6 +1,6 @@
 #ifndef PRINTF_H
 #define PRINTF_H
-
+#include <stdio.h>
 #include <stdarg.h>
 
 
@@ -14,7 +14,7 @@ int _strlen(const char *str);
  **/
 typedef struct _format
 {
-	char *identifier;
+	char *_char;
 	void (*f)(char *separator, va_list args);
 } f_dt;
 
