@@ -8,10 +8,9 @@
 int print_all(const char *str, va_list list)
 {
 	format formats[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{NULL, NULL}
+		{'c', print_char},
+		{'s', print_string},
+		{0, NULL}
 	};
 	int size, i, j;
 
@@ -22,7 +21,7 @@ int print_all(const char *str, va_list list)
 			j = 0;
 			i++;
 
-			if (str[i] != formats[j].type && formats[j].f != NULL)
+			if (str[i] != 0 && formats[j].f != NULL)
 			{
 				j++;
 			}

@@ -14,8 +14,8 @@ int _strlen(const char *str);
  **/
 typedef struct _format
 {
-	char *_char;
-	void (*f)(va_list);
+	char _char;
+	int (*f)(va_list);
 } format;
 
 int _putchar(char c);
