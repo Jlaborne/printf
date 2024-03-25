@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/root/printf-1/printf",
-      "program": "/root/printf-1/printf/build/Debug/outDebug",
+      "cwd": "/root/printf-1",
+      "program": "/root/printf-1/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
