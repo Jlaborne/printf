@@ -18,7 +18,7 @@ typedef struct _format
 	int (*f)(va_list);
 } format;
 
-int _putchar(char c);
+int _putchar(char);
 int _printf(const char *format, ...);
 int print_all(const char *str, va_list list);
 int _strlen(const char *s);

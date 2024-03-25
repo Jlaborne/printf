@@ -9,11 +9,11 @@
  */
 int print_char(va_list list)
 {
-	int c;
+	char c;
 
 	c = va_arg(list, int);
 
-	printf("%d", c);
+	_putchar(c);
 
 	return (1);
 }
