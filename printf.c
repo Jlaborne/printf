@@ -1,4 +1,8 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
+
 /**
  * _printf -
  * @format:
@@ -7,14 +11,15 @@
  * the null byte used to end output to strings)
  */
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	int size;
 
 	va_list args;
-
+    va_start(args, format);
+    
 	if (format == NULL)
-		return(NULL);
+		return (NULL);
 
 	va_start(args, format);
 
@@ -24,5 +29,5 @@ int _printf(const char *format, ...);
 
 	va_end(args);
 
-	return(size);
+	return (size);
 }
