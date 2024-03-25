@@ -2,12 +2,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-int print_percent(va_list args)
+void print_percent(char *separator, va_list args)
 {
    
-    int percent_value = va_arg(args, int);
-
-    printf("%d%%", percent_value);
-
-    return (0);
+  int percent_value = va_arg(args, int);
+    printf("%s%d%%", separator, percent_value);
 }
