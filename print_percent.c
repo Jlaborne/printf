@@ -5,12 +5,6 @@
 void print_percent(char *separator, va_list args)
 {
    
-     int percent_value = va_arg(args, int);
-
-    if (separator != NULL && separator[0] != '\0')
-        printf("%s", separator);
-
-    printf("%d%%", percent_value);
-
-    return (0);
+  int percent_value = va_arg(args, int);
+    printf("%s%d%%", separator, percent_value);
 }
