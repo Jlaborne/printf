@@ -1,6 +1,8 @@
 #ifndef PRINTF_H
 #define PRINTF_H
 #include <stdarg.h>
+#include <stddef.h>
+#include <stdio.h>
 
 int _putchar(char c);
 

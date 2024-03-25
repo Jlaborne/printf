@@ -20,7 +20,8 @@ int _printf(const char *format, ...);
 
 	size = _strlen(format);
 
-	size = convert_check(format, args);
+	print_all(format, args);
+
 	va_end(args);
 
 	return(size);
