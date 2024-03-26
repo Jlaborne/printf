@@ -22,6 +22,7 @@ int print_all(const char *str, va_list list)
 		{
 			j = 0;
 			i++;
+			size--;
 
 			if (str[i] != formats[j]._char && formats[j].f != NULL)
 			{
@@ -30,6 +31,7 @@ int print_all(const char *str, va_list list)
 			if (formats[j].f != NULL)
 			{
 				formats[j].f(list);
+				size--;
 			}
 			else
 			{
@@ -40,7 +42,7 @@ int print_all(const char *str, va_list list)
 		else
 		{
 		_putchar(str[i]);
-		size = size + 1;
+		size++;
 		}
 	}
 
