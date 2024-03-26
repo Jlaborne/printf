@@ -1,9 +1,11 @@
 #ifndef PRINTF_H
 #define PRINTF_H
-
+#include <stdio.h>
 #include <stdarg.h>
 
-int _strlen(const char *s);
+
+int _strlen(const char *str);
+
 /**
  * struct _format - Typedef struct
  *
@@ -12,15 +14,16 @@ int _strlen(const char *s);
  **/
 typedef struct _format
 {
-	char *type;
-	int (*f)(char *separator, va_list args);
-} frmt_id;
+	char _char;
+	int (*f)(va_list);
+} format;
 
-int _putchar(char c);
+int _putchar(char);
 int _printf(const char *format, ...);
-void print_all(const char * const format, ...);
-void print_char(char *separator, va_list args);
-void print_string(char *separator, va_list args);
-void print_percent(char *separator, va_list args);
+int print_all(const char *str, va_list list);
+int _strlen(const char *s);
+int print_char(va_list);
+int print_string(va_list);
+int print_percent(va_list);
 
 #endif

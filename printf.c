@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 	int size;
 
 	va_list args;
-    va_start(args, format);
+
+	va_start(args, format);
 
 	if (format == NULL)
 		return (-1);
@@ -22,9 +23,10 @@ int _printf(const char *format, ...)
 
 	size = _strlen(format);
 
-	print_all(format, args);
+	size = print_all(format, args);
 
 	va_end(args);
+	printf("%d\n", size);
 
 	return (size);
 }

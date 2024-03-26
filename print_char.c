@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 
 /**
  * print_char - Print a character
@@ -7,7 +7,13 @@
  * @args: A va_list containing the character to print
  * Return: Always returns 0
  */
-void print_char(char *separator, va_list args)
+int print_char(va_list list)
 {
-    printf("%s%c", separator, va_arg(args, int));   
+	char c;
+
+	c = va_arg(list, int);
+
+	_putchar(c);
+
+	return (1);
 }

@@ -13,9 +13,13 @@ int main(void)
     int len2;
     unsigned int ui;
     void *addr;
+    int printed_chars = 0;
 
     len = _printf("Let's try to printf a simple sentence.\n");
-    len2 = printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n%d", printed_chars);
+    printf("\nNumber of characters printed: %d\n", len2);
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n%d", 'H', printed_chars);
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
     _printf("Length:[%d, %i]\n", len, len);

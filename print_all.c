@@ -1,42 +1,50 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
+
 /**
  * print_all - Print values based on format string
  * @format: The format string
  * @...: Additional arguments depending on format string
  */
-void print_all(const char * const format, ...)
+int print_all(const char *str, va_list list)
 {
-    va_list args;
-	f_dt form_types[] = {
-		{ "c", print_char },
-		{ "s", print_string },
-        { "%%", print_percent }
+	format formats[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{0, NULL}
 	};
-    unsigned int i = 0;
-	unsigned int j = 0;
-	char *separator = " ";
+	int size, i, j;
 
-	va_start(args, format);
+	size = 0;
 
-	while (format != NULL && format[i])
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		j = 0;
-		while (j < sizeof(form_types) / sizeof(form_types[0]))
+		if (str[i] == '%')
 		{
-			if (format[i] == *form_types[j].identifier)
+			j = 0;
+			i++;
+			size--;
+
+			if (str[i] != formats[j]._char && formats[j].f != NULL)
 			{
-				form_types[j].f(separator, args);
-				separator = ", ";
-                break;
+				j++;
 			}
-			j++;
+			if (formats[j].f != NULL)
+			{
+				formats[j].f(list);
+				size--;
+			}
+			else
+			{
+				putchar('%');
+				size++;
+			}
 		}
-		i++;
+		else
+		{
+		_putchar(str[i]);
+		size++;
+		}
 	}
 
-	va_end(args);
-	printf("\n");
-
+	return (size);
 }
