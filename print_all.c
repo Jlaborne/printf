@@ -31,11 +31,10 @@ int print_all(const char *str, va_list list)
 			if (formats[j].f != NULL)
 			{
 				formats[j].f(list);
-				size--;
 			}
 			else
 			{
-				putchar('%');
+				_putchar('%');
 				size++;
 			}
 		}
