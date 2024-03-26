@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 
 	va_list args;
 
+	size = 0;
+
 	va_start(args, format);
 
 	if (format == NULL)
@@ -22,11 +24,10 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	size = _strlen(format);
-
 	size = print_all(format, args);
 
 	va_end(args);
-	printf("%d\n", size);
+	printf("charactere imprimes avc _printf: %d\n", size);
 
 	return (size);
 }
