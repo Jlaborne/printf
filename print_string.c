@@ -7,11 +7,14 @@
  */
 int print_string(va_list list)
 {
-    char *p;
-    int p_len;
+	char *p;
+	int i, p_len;
 
-    p = va_arg(list, char*);
-    p_len = _strlen(p);
+	i = 0;
 
-    return(p_len);
+	p = va_arg(list, char*);
+	_putchar(p[i]);
+	p_len = _strlen(p);
+
+	return(p_len);
 }
