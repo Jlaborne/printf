@@ -1,11 +1,21 @@
-editors: vi, vim, emacs
-Afiles will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-files should end with a new line
-use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-use global variables
-5 functions per file
-In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation; do not push your own main.c file. Our main.c files might be different from the one shown in the examples
-The prototypes of all your functions should be included in your header file called main.h
-push your header file
-All header files should be include guarded
-provide the _putchar function for this project
+# Project : C - printf
+![](https://imgur.com/ZdbB0Pf.png)
+Description : 
+This project aim to recreate a function similar to the function "printf()".
+
+## What is printf() ?
+
+In C language, printf() function is used to print formatted output to the standard output stdout (which is generally the console screen). The printf function is a part of the C standard library <stdio. h> and it can allow formatting the output in numerous ways.
+
+## Compilation
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+
+## Patterns
+
+| Specifiers  | Functions   |Description |
+| ----------- | ----------- |----------- |
+| c      | _printchar       |prints a character |
+| s  | _printstring       |prints a string |
+| i  | _print_integer        |prints an integer |
+| d  | _print_integer        |prints a decimal |
